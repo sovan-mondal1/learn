@@ -1,59 +1,108 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/signupstyle.css">
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/signupstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
+
 <body>
 
-<div class="header">
-	<div class="container">
-		<div class="card">
-			<div id="mySidenav" class="sidenav">
-			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			  <a href="#">Home</a>
-			  <a href="#">SignUp</a>
-			  <a href="#">Login</a>
-			  <a href="#">About</a>
-			  <a href="#">Contact</a>
-			  <a href="#">Help</a>
-			</div>
-			<i class="fa fa-bars" id="bar_logo" onclick="openNav()" style="font-size: 1.3em;"></i>
-		</div>
-		<div class="card para2" id="para">
-			<a href="link/membership.php" style="color: rgb(0,255,255,0.8); text-decoration: none;
-			font-size: 1.2em;">Membership</a>
-		</div>
-	</div>
+    <div class="header">
+        <div class="container">
+            <div class="card">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#">Home</a>
+                    <a href="#">SignUp</a>
+                    <a href="#">Login</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Help</a>
+                </div>
+                <i class="fa fa-bars" id="bar_logo" onclick="openNav()" style="font-size: 1.3em;"></i>
+            </div>
+            <div class="card" id="para">
+                <h2 style="font-family: 'Lobster', cursive;">Learn<span style="font-size: 0.5em; color: white;">code</span></h2>
+            </div>
+            <div class="card para2" id="para">
+                <h2><a href="link/membership.html" style="font-family: 'Lobster', cursive;color: rgba(255, 255, 255); text-decoration: none;">Membership</a></h2>
+            </div>
+        </div>
 
-	<div class="header_down">
-		<button>Signup</button>	
-	</div>
-</div>
+        <div class="header_down">
+            <button><a href="link/signup.html" style="font-family: 'Lobster', cursive;color: rgba(255, 255, 255); text-decoration: none;">SignUp</a></button>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="img/fb.png">
+                <img src="img/tw.png">
+                <img src="img/gp.png">
+            </div>
+            <form class="input-group" action="index.html" method="post" id="login">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <form class="input-group" action="index.html" method="post" id="register">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="email" class="input-field" placeholder="Email Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
 
 
-<script>
+    </div>
 
-function openNav() {
-	if (window.matchMedia("(max-width: 736px)").matches) {
-  document.getElementById("mySidenav").style.width = "100%";
-	}
-	else
-	if (window.matchMedia("(max-width: 1024px)").matches) {
-  document.getElementById("mySidenav").style.width = "35%";
-	}
-	else{
-		document.getElementById("mySidenav").style.width = "15%";
-	}
-}
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
+    <script>
+        function openNav() {
+            if (window.matchMedia("(max-width: 736px)").matches) {
+                document.getElementById("mySidenav").style.width = "100%";
+            } else
+            if (window.matchMedia("(max-width: 1024px)").matches) {
+                document.getElementById("mySidenav").style.width = "35%";
+            } else {
+                document.getElementById("mySidenav").style.width = "15%";
+            }
+        }
 
-</script>
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+    </script>
 
 </body>
+
 </html>
