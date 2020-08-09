@@ -12,7 +12,21 @@
 <body>
 
     <div class="header">
-        <div class="container">
+        <div class="container" id="for_one">
+            <div class="card">
+                <h2 style="font-family: 'Lobster', cursive; margin-left: 5em; color: white;">Learn<span style="font-size: 0.5em; color: white;">code</span></h2>
+            </div>
+            <div class="card">
+                <a href="#btn" class="head_link">Register</a>
+                <a href="#btn" class="head_link">Login</a>
+                <a href="#about_us" class="head_link">About</a>
+                <a href="#contact" class="head_link">Contact Us</a>
+                <a href="link/membership.html" class="head_link">Membership Details</a>
+                <a href="link/membership.html" style="margin-right: 5em;font-family: 'Lobster', cursive;color: rgba(255, 255, 255); text-decoration: none;" id="member">Membership</a>
+            </div>
+
+        </div>
+        <div class="container" id="for_both">
             <div class="card">
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -21,7 +35,7 @@
                     <a href="#btn">Register</a>
                     <a href="#btn">Login</a>
                     <a href="#about_us">About</a>
-                    <a href="#">Contact Us</a>
+                    <a href="#contact">Contact Us</a>
                 </div>
                 <i class="fa fa-bars" id="bar_logo" onclick="openNav()" style="font-size: 1.3em;"></i>
             </div>
@@ -130,7 +144,7 @@
     </div>
     <!------------------------about us close here-------------------->
 
-    <div class="contact_us" style="clear: both;">
+    <div class="contact_us" style="clear: both;" id="contact">
         <div class="contact_input">
             <input type="email" name="c_email" placeholder="Enter Email Id" required><br>
             <textarea name="c_text" id="" cols="30" rows="5" placeholder="Please send your opinion..." required></textarea><br>
