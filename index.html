@@ -86,33 +86,32 @@
 
                     <div class="mySlides fade">
 
-                        <img src="ani/s1.jpg" style="width:100%">
+                        <img src="ani/s5.png" style="width:100%" class="mySlide">
 
                     </div>
                     <div class="mySlides fade">
 
-                        <img src="ani/s2.png" style="width:100%">
+                        <img src="ani/s2.png" style="width:100%" class="mySlide">
 
                     </div>
                     <div class="mySlides fade">
 
-                        <img src="ani/s3.jpg" style="width:100%">
+                        <img src="ani/s3.png" style="width:100%" class="mySlide">
 
                     </div>
                     <div class="mySlides fade">
 
-                        <img src="ani/s4.jpg" style="width:100%">
+                        <img src="ani/s1.png" style="width:100%" class="mySlide">
 
                     </div>
                     <div class="mySlides fade">
 
-                        <img src="ani/s5.jpg" style="width:100%">
+                        <img src="ani/s4.png" style="width:100%" class="mySlide">
 
                     </div>
 
 
                 </div>
-                <br>
 
                 <div style="text-align:center">
                     <span class="dot"></span>
@@ -121,11 +120,23 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                 </div>
+
+            </div>
+            <div id="ani_but">
+                <button class="left_b" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="right_b" onclick="plusDivs(1)">&#10095;</button>
             </div>
         </div>
     </div>
+    <!------------------------about us close here-------------------->
 
-
+    <div class="contact_us" style="clear: both;">
+        <div class="contact_input">
+            <input type="email" name="c_email" placeholder="Enter Email Id" required><br>
+            <textarea name="c_text" id="" cols="30" rows="5" placeholder="Please send your opinion..." required></textarea><br>
+            <input type="submit" name="c_submit" value="send">
+        </div>
+    </div>
 
 
 
@@ -172,26 +183,28 @@
             y.style.left = "450px";
             z.style.left = "0";
         }
-        var slideIndex = 0;
-        showSlides();
 
-        function showSlides() {
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
             var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
+            var x = document.getElementsByClassName("mySlide");
+            if (n > x.length) {
                 slideIndex = 1
             }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
+            if (n < 1) {
+                slideIndex = x.length
             }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
         }
     </script>
 
